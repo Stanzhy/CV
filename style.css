@@ -1,0 +1,197 @@
+* {
+  box-sizing: border-box;
+  font-family: Quicksand, Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  background-color: #1e293b;
+  color: #cbd5e1;
+  min-height: 100vh;
+}
+
+/* @media (min-width: 768px) {
+  body {
+    grid-template-columns: 1fr 2fr;
+    
+    
+  }
+
+  .head {
+    grid-column: 1;
+  }
+
+  .contacts {
+    grid-column: 1;
+  }
+
+  .timeline {
+    grid-column: 2;
+  }
+
+  .skils{
+  grid-column: 1;
+}
+
+.language{
+  grid-column: 1;
+}
+} */
+
+img {
+  border-radius: 50%;
+  border: 4px solid #cbd5e1;
+  width: 250px;
+  align-items: center;
+  height: fit-content;
+}
+
+.head {
+  text-align: center;
+}
+
+h1 {
+  padding-top: 20px;
+  line-height: 1.5em;
+}
+h1::first-line {
+  font-size: 1.5em;
+}
+
+section {
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+.contacts {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 40px;
+}
+
+li {
+  font-size: 1.5rem;
+  text-align: left;
+  line-height: 1.5;
+  padding: 5px;
+  list-style: none;
+}
+
+/* ul icons */
+ul i {
+  font-size: 30px;
+  color: #fcfeff;
+  text-align: left;
+}
+
+.timeline i {
+  font-size: 30px;
+  color: #1e293b;
+  text-align: left;
+}
+
+/* h2 position */
+.h2 {
+  display: grid;
+  grid-template-columns: 90px 1fr 90px;
+}
+
+.h2 i {
+  width: 90%;
+  text-align: right;
+}
+
+.h2 h2 {
+  text-align: center;
+}
+
+a {
+  color: #cbd5e1;
+  text-decoration: none;
+}
+
+.timeline {
+  background-color: #fcfeff;
+  color: #19273f;
+}
+
+/* Контейнер часової лінії */
+.timeline-item {
+  display: grid;
+  grid-template-columns: 90px 24px 1fr;
+  gap: 1rem;
+  margin: 50px auto;
+}
+
+.timeline-date {
+  font-weight: bold;
+  color: #1e293b;
+  text-align: center;
+  padding-top: 3px;
+}
+
+.timeline-line {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* Суцільна суцільна лінія ззаду */
+.timeline-line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: -50px;
+  width: 3px;
+  background-color: #cccccc;
+  z-index: 1;
+}
+
+.timeline-item:last-child .timeline-line::before {
+  bottom: 0;
+}
+
+/* Кругла точка */
+.timeline-point {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background-color: #2b2b2b;
+  border-radius: 50%;
+  align-items: center;
+  z-index: 2;
+  margin-top: 9px;
+}
+
+.timeline-content {
+  padding-left: 10px;
+  padding-top: 3px;
+}
+
+/* Блок з контентом */
+.timeline-content h3 {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+  color: #0f172a;
+}
+
+.timeline-content h4 {
+  font-size: 0.8rem;
+  margin: 0 0 9px 0;
+}
+
+.timeline-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+progress {
+  width: 80%;
+  height: 20px;
+  accent-color: #001f3f; /* Змінює колір заповнення у сучасних браузерах */
+}
