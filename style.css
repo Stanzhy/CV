@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700");
+
+/* --baseColor  */
+
 * {
   box-sizing: border-box;
   font-family: Quicksand, Arial, Helvetica, sans-serif;
@@ -6,39 +10,50 @@
 }
 
 body {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ccc;
+}
+
+aside {
+  padding: 0 30px 0 30px;
   background-color: #1e293b;
   color: #cbd5e1;
-  min-height: 100vh;
 }
 
-/* @media (min-width: 768px) {
+main {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  padding: 0 30px 0 30px;
+  background-color: #fcfeff;
+  color: #19273f;
+}
+
+@media (min-width: 768px) {
   body {
+    display: grid;
     grid-template-columns: 1fr 2fr;
-    
-    
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "aside1 main"
+      "aside2 main";
+    max-width: 1300px;
+    margin: 0 auto;
   }
 
-  .head {
-    grid-column: 1;
+  aside:first-of-type {
+    grid-area: aside1;
   }
 
-  .contacts {
-    grid-column: 1;
+  aside:last-of-type {
+    grid-area: aside2;
   }
 
-  .timeline {
-    grid-column: 2;
+  main {
+    grid-area: main;
   }
-
-  .skils{
-  grid-column: 1;
 }
-
-.language{
-  grid-column: 1;
-}
-} */
 
 img {
   border-radius: 50%;
@@ -48,28 +63,40 @@ img {
   height: fit-content;
 }
 
+/* image and name */
 .head {
   text-align: center;
-}
-
-h1 {
-  padding-top: 20px;
-  line-height: 1.5em;
-}
-h1::first-line {
-  font-size: 1.5em;
+  h1 {
+    padding-top: 20px;
+    line-height: 1.5em;
+  }
+  h1::first-line {
+    font-size: 1.5em;
+  }
 }
 
 section {
-  padding: 20px;
+  padding: 20px 0 20px 0;
   border-bottom: 1px solid #ccc;
-  padding-bottom: 20px;
+}
+section:last-child {
+  border: none;
 }
 
 .contacts {
   display: grid;
-  grid-template-columns: 30px 1fr;
-  gap: 40px;
+  grid-template-columns: 50px 1fr;
+  gap: 20px;
+  ul {
+    padding: 0;
+  }
+  li {
+    list-style: none;
+  }
+}
+
+ul {
+  padding-left: 30px;
 }
 
 li {
@@ -77,51 +104,63 @@ li {
   text-align: left;
   line-height: 1.5;
   padding: 5px;
-  list-style: none;
+  list-style: disc;
 }
 
-/* ul icons */
-ul i {
+/* aside icons */
+aside i {
   font-size: 30px;
   color: #fcfeff;
   text-align: left;
 }
 
-.timeline i {
+main i {
   font-size: 30px;
   color: #1e293b;
   text-align: left;
 }
 
-/* h2 position */
-.h2 {
-  display: grid;
-  grid-template-columns: 90px 1fr 90px;
-}
-
-.h2 i {
-  width: 90%;
-  text-align: right;
-}
-
-.h2 h2 {
-  text-align: center;
-}
-
 a {
-  color: #cbd5e1;
+  color: hsl(213, 27%, 84%);
   text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
 
-.timeline {
-  background-color: #fcfeff;
-  color: #19273f;
+a:hover {
+  color: hsl(213, 27%, 64%);
+  border-color: hsl(213, 27%, 64%);
+}
+
+/* title position */
+aside .title-box {
+  grid-template-columns: 50px 1fr 50px;
+  margin-bottom: 20px;
+  i {
+    justify-self: center;
+  }
+}
+
+.title-box {
+  display: grid;
+  grid-template-columns: 14% 1fr 14%;
+  align-items: center;
+
+  i {
+    justify-self: right;
+  }
+
+  h2 {
+    text-align: center;
+  }
 }
 
 /* Контейнер часової лінії */
 .timeline-item {
   display: grid;
-  grid-template-columns: 90px 24px 1fr;
+  grid-template-columns: 15% 24px 1fr;
   gap: 1rem;
   margin: 50px auto;
 }
@@ -169,29 +208,39 @@ a {
 .timeline-content {
   padding-left: 10px;
   padding-top: 3px;
-}
 
-/* Блок з контентом */
-.timeline-content h3 {
-  margin: 0 0 4px 0;
-  font-size: 18px;
-  color: #0f172a;
-}
+  h3 {
+    margin: 0 0 4px 0;
+    color: #0f172a;
+  }
 
-.timeline-content h4 {
-  font-size: 0.8rem;
-  margin: 0 0 9px 0;
-}
+  h4 {
+    font-size: 0.8rem;
+    margin: 0 0 9px 0;
+  }
 
-.timeline-content p {
-  margin: 0;
-  font-size: 14px;
-  color: #64748b;
-  line-height: 1.5;
+  p {
+    margin: 0;
+    /* font-size: 14px; */
+    color: #64748b;
+    line-height: 1.5;
+  }
 }
 
 progress {
   width: 80%;
   height: 20px;
-  accent-color: #001f3f; /* Змінює колір заповнення у сучасних браузерах */
+  accent-color: #001f3f;
+}
+
+.hobbies ul {
+  display: grid;
+  grid-column: 1fr 1fr;
+
+  li:nth-child(even) {
+    grid-column: 2;
+  }
+  li {
+    list-style: none;
+  }
 }
