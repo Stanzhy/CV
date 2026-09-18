@@ -1,5 +1,7 @@
+/* Impotrerar 'Quicksand' font. */
 @import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700");
 
+/* Variabler för färger som används i hela projektet */
 :root {
   --base-color-aside: #1e293b;
   --base-color-main: #ffffff;
@@ -12,6 +14,7 @@
   --text-color-hover: hsl(213, 27%, 64%);
 }
 
+/* CSS-reset: enkel sätt att att ge kontroll över layouten i min situation. */
 *,
 *::before,
 *::after {
@@ -29,24 +32,25 @@ body {
   background-color: var(--base-color-page);
 }
 
+/* Vänster sidokolumn */
 aside {
   padding: 0 30px 0 30px;
   background-color: var(--base-color-aside);
   color: var(--text-aside);
 }
 
-/* image and name */
-.head {
+/* bild och namn */
+aside > header {
   text-align: center;
   color: var(--text-aside-title);
   padding: 1.5em 0 1.5em 0;
   border-bottom: 1px solid var(--base-color-page);
 }
-.head h1 {
+aside > header h1 {
   padding-top: 20px;
   line-height: 1.5em;
 }
-.head h1::first-line {
+aside > header h1::first-line {
   font-size: 1.5em;
 }
 
@@ -63,7 +67,7 @@ section {
   border-bottom: 1px solid var(--base-color-page);
 }
 
-/* delete underline in last section */
+/* ta bort understreck i sista section */
 aside:last-of-type section:last-child {
   border: none;
 }
@@ -101,7 +105,7 @@ li {
   list-style: disc;
 }
 
-/* aside icons */
+/* Sidokolumns ikoner. */
 aside i {
   font-size: 30px;
   text-align: left;
@@ -140,6 +144,7 @@ progress {
   list-style: none;
 }
 
+/* Huvudinnehållet (höger kolumn på desktop). */
 main {
   font-size: 1rem;
   line-height: 1.4rem;
@@ -153,21 +158,21 @@ main i {
   text-align: left;
 }
 
-/* title position */
-header {
+/* Placering av rubriker för timeline elements. */
+section header {
   display: grid;
   grid-template-columns: 16% 1fr 15%;
   align-items: center;
 }
-header i {
+section header i {
   justify-self: center;
 }
 
-header h2 {
+section header h2 {
   text-align: center;
 }
 
-/* timeline */
+/* Timeline element. */
 .timeline-item {
   display: grid;
   grid-template-columns: 16% 24px 1fr;
@@ -181,14 +186,19 @@ header h2 {
   min-width: 63px;
   padding-top: 3px;
 }
+
+/* Tidslinjens behållare. */
 .timeline-line {
+  /* 'position: relative' gör en referenspunkt för elementen som har 'position: absolute'. */
   position: relative;
   display: flex;
   justify-content: center;
 }
 
+/* Själva den vertikala linjen. */
 .timeline-line::before {
   content: "";
+  /* 'position: absolute' placerar elementen exakt inuti elementen som har 'position: relativ'. */
   position: absolute;
   top: 0;
   bottom: -50px;
@@ -197,10 +207,12 @@ header h2 {
   z-index: 1;
 }
 
+/* Sluta linjen på sista elementet. */
 .timeline-item:last-child .timeline-line::before {
   bottom: 0;
 }
 
+/* Punkten på tidslinjen */
 .timeline-line::after {
   content: "";
   position: absolute;
@@ -231,6 +243,7 @@ header h2 {
   line-height: 1.5;
 }
 
+/* Ändrar layouten på bredare skärmar. */
 @media (min-width: 768px) {
   body {
     display: grid;

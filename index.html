@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!-- Laddar Font Awesome för att kunna använda ikoner med <i>-element. -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
       integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
       crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -12,14 +13,17 @@
   </head>
 
   <body>
+    <!-- Vänster sidokolumn som innehåller profil och kontaktuppgifter. -->
     <aside>
-      <div class="head">
+      <header>
         <img src="./image/stanislav_zhehestovskyi.jpg" alt="Profile image">
         <h1>Stanislav<br>Zhehestovskyi</h1>
-      </div>
+      </header>
+      <!-- Klassen "contacts" används för att styla kontaktlistan separat. -->
       <div class="contacts">
         <ul>
           <li>
+            <!-- Klassen anger vilken Font Awesome-ikon som ska visas. -->
             <i class="fa-solid fa-square-phone"></i>+46761572258
           </li>
           <li>
@@ -36,13 +40,17 @@
     </aside>
 
     <main>
+      <!-- Kontainer timeline gör samma layout åt alla tidslinjesektioner. -->
       <section class="timeline">
+        <!-- Rubrik till varje timeline element. -->
         <header>
           <i class="fa-solid fa-circle-info"></i>
           <h2>Varför jag</h2>
         </header>
+        <!-- Klassen grupperar datum eller underrubrik, linje och innehåll. -->
         <div class="timeline-item">
           <h3>Om mig</h3>
+          <!-- Div-element som är tidslinjens behållare. -->
           <div class="timeline-line"></div>
           <div class="timeline-content">
             <p>
@@ -160,6 +168,7 @@
       </section>
     </main>
 
+    <!-- Andra del av vänster sidokolumn som innehåller färdigheter, portfolio, språk och hobbyer. -->
     <aside>
       <section class="soft-skills">
         <header>
