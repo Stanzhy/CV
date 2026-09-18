@@ -1,5 +1,7 @@
+/* Impotrerar 'Quicksand' font. */
 @import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700");
 
+/* Variabler för färger som används i hela projektet */
 :root {
   --base-color-aside: #1e293b;
   --base-color-main: #ffffff;
@@ -12,9 +14,11 @@
   --text-color-hover: hsl(213, 27%, 64%);
 }
 
-* {
+/* CSS-reset: enkel sätt att att ge kontroll över layouten i min situation. */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  font-family: Quicksand, Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -24,26 +28,30 @@ body {
   flex-direction: column;
   min-height: 100vh;
   min-width: 320px;
+  font-family: Quicksand, Arial, Helvetica, sans-serif;
   background-color: var(--base-color-page);
 }
 
+/* Vänster sidokolumn */
 aside {
   padding: 0 30px 0 30px;
   background-color: var(--base-color-aside);
   color: var(--text-aside);
 }
 
-/* image and name */
-.head {
+/* bild och namn */
+aside > header {
   text-align: center;
   color: var(--text-aside-title);
-  h1 {
-    padding-top: 20px;
-    line-height: 1.5em;
-  }
-  h1::first-line {
-    font-size: 1.5em;
-  }
+  padding: 1.5em 0 1.5em 0;
+  border-bottom: 1px solid var(--base-color-page);
+}
+aside > header h1 {
+  padding-top: 20px;
+  line-height: 1.5em;
+}
+aside > header h1::first-line {
+  font-size: 1.5em;
 }
 
 img {
@@ -59,7 +67,7 @@ section {
   border-bottom: 1px solid var(--base-color-page);
 }
 
-/* delete underline in last section */
+/* ta bort understreck i sista section */
 aside:last-of-type section:last-child {
   border: none;
 }
@@ -68,20 +76,20 @@ aside:last-of-type section:last-child {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: 1.5em 0 1.5em 0;
   border-bottom: 0;
-  ul {
-    padding: 0;
-  }
-  li {
-    display: grid;
-    grid-template-columns: 15% 1fr;
-    align-items: center;
-    text-align: left;
-    list-style: none;
-  }
-  span {
-    padding-left: 20px;
-  }
+}
+.contacts ul {
+  padding: 0;
+}
+
+.contacts li {
+  display: grid;
+  grid-template-columns: 16% 1fr;
+  align-items: center;
+  text-align: left;
+  list-style: none;
+  column-gap: 20px;
 }
 
 ul {
@@ -97,7 +105,7 @@ li {
   list-style: disc;
 }
 
-/* aside icons */
+/* Sidokolumns ikoner. */
 aside i {
   font-size: 30px;
   text-align: left;
@@ -131,12 +139,12 @@ progress {
   display: flex;
   justify-content: space-around;
   padding-left: 0;
-
-  li {
-    list-style: none;
-  }
+}
+.hobbies ul li {
+  list-style: none;
 }
 
+/* Huvudinnehållet (höger kolumn på desktop). */
 main {
   font-size: 1rem;
   line-height: 1.4rem;
@@ -150,44 +158,47 @@ main i {
   text-align: left;
 }
 
-/* title position */
-.title-box {
+/* Placering av rubriker för timeline elements. */
+section header {
   display: grid;
-  grid-template-columns: 15% 1fr 15%;
+  grid-template-columns: 16% 1fr 15%;
   align-items: center;
-
-  i {
-    justify-self: center;
-  }
-
-  h2 {
-    text-align: center;
-  }
+}
+section header i {
+  justify-self: center;
 }
 
-/* timeline */
+section header h2 {
+  text-align: center;
+}
+
+/* Timeline element. */
 .timeline-item {
   display: grid;
-  grid-template-columns: 15% 24px 1fr;
+  grid-template-columns: 16% 24px 1fr;
   gap: 1rem;
   margin: 50px auto;
 }
 
-.timeline-date {
+.timeline-item h3 {
   overflow-wrap: anywhere;
   text-align: left;
   min-width: 63px;
   padding-top: 3px;
 }
 
+/* Tidslinjens behållare. */
 .timeline-line {
+  /* 'position: relative' gör en referenspunkt för elementen som har 'position: absolute'. */
   position: relative;
   display: flex;
   justify-content: center;
 }
 
+/* Själva den vertikala linjen. */
 .timeline-line::before {
   content: "";
+  /* 'position: absolute' placerar elementen exakt inuti elementen som har 'position: relativ'. */
   position: absolute;
   top: 0;
   bottom: -50px;
@@ -196,17 +207,19 @@ main i {
   z-index: 1;
 }
 
+/* Sluta linjen på sista elementet. */
 .timeline-item:last-child .timeline-line::before {
   bottom: 0;
 }
 
-.timeline-point {
+/* Punkten på tidslinjen */
+.timeline-line::after {
+  content: "";
   position: absolute;
   width: 9px;
   height: 9px;
   background-color: var(--base-color-aside);
   border-radius: 50%;
-  align-items: center;
   z-index: 2;
   margin-top: 9px;
 }
@@ -214,23 +227,23 @@ main i {
 .timeline-content {
   padding-left: 10px;
   padding-top: 3px;
-
-  h3 {
-    margin: 0 0 4px 0;
-  }
-
-  h4 {
-    font-size: 0.8rem;
-    margin: 0 0 9px 0;
-  }
-
-  p {
-    margin: 0;
-    color: var(--text-p);
-    line-height: 1.5;
-  }
+}
+.timeline-content h3 {
+  margin: 0 0 4px 0;
 }
 
+.timeline-content h4 {
+  font-size: 0.8rem;
+  margin: 0 0 9px 0;
+}
+
+.timeline-content p {
+  margin: 0;
+  color: var(--text-p);
+  line-height: 1.5;
+}
+
+/* Ändrar layouten på bredare skärmar. */
 @media (min-width: 768px) {
   body {
     display: grid;

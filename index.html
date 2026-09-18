@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!-- Laddar Font Awesome för att kunna använda ikoner med <i>-element. -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
       integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
       crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -12,42 +13,45 @@
   </head>
 
   <body>
+    <!-- Vänster sidokolumn som innehåller profil och kontaktuppgifter. -->
     <aside>
-      <section class="head">
+      <header>
         <img src="./image/stanislav_zhehestovskyi.jpg" alt="Profile image">
         <h1>Stanislav<br>Zhehestovskyi</h1>
-      </section>
-      <section class="contacts">
+      </header>
+      <!-- Klassen "contacts" används för att styla kontaktlistan separat. -->
+      <div class="contacts">
         <ul>
           <li>
-            <i class="fa-solid fa-square-phone"></i><span>+46761572258</span>
+            <!-- Klassen anger vilken Font Awesome-ikon som ska visas. -->
+            <i class="fa-solid fa-square-phone"></i>+46761572258
           </li>
           <li>
-            <i class="fa-solid fa-envelope"></i><span>stas.zhegest@gmail.com</span>
+            <i class="fa-solid fa-envelope"></i>stas.zhegest@gmail.com
           </li>
           <li>
-            <i class="fa-brands fa-github"></i><span><a href="https://github.com/Stanzhy">GitHub</a></span>
+            <i class="fa-brands fa-github"></i><a href="https://github.com/Stanzhy">GitHub</a>
           </li>
           <li>
-            <i class="fa-solid fa-location-dot"></i><span>Örebro, Sverige</span>
+            <i class="fa-solid fa-location-dot"></i>Örebro, Sverige
           </li>
         </ul>
-      </section>
+      </div>
     </aside>
 
     <main>
+      <!-- Kontainer timeline gör samma layout åt alla tidslinjesektioner. -->
       <section class="timeline">
-        <div class="title-box">
+        <!-- Rubrik till varje timeline element. -->
+        <header>
           <i class="fa-solid fa-circle-info"></i>
           <h2>Varför jag</h2>
-        </div>
+        </header>
+        <!-- Klassen grupperar datum eller underrubrik, linje och innehåll. -->
         <div class="timeline-item">
-          <div class="timeline-date">
-            <h3>Om mig</h3>
-          </div>
-          <div class="timeline-line">
-            <div class="timeline-point"></div>
-          </div>
+          <h3>Om mig</h3>
+          <!-- Div-element som är tidslinjens behållare. -->
+          <div class="timeline-line"></div>
           <div class="timeline-content">
             <p>
               Jag utbildar mig till webbutvecklare med fokus på .NET och tycker
@@ -65,17 +69,13 @@
       </section>
 
       <section class="timeline">
-        <div class="title-box">
+        <header>
           <i class="fa-solid fa-briefcase"></i>
           <h2>Arbetslivserfarenhet</h2>
-        </div>
+        </header>
         <div class="timeline-item">
-          <div class="timeline-date">
-            <h3>2024-2025</h3>
-          </div>
-          <div class="timeline-line">
-            <div class="timeline-point"></div>
-          </div>
+          <h3>2024-2025</h3>
+          <div class="timeline-line"></div>
           <div class="timeline-content">
             <h3>Städax Fönsterputs AB</h3>
             <h4>Örebro, Sverige</h4>
@@ -90,12 +90,8 @@
         </div>
 
         <div class="timeline-item">
-          <div class="timeline-date">
-            <h3>2022-2024</h3>
-          </div>
-          <div class="timeline-line">
-            <div class="timeline-point"></div>
-          </div>
+          <h3>2022-2024</h3>
+          <div class="timeline-line"></div>
           <div class="timeline-content">
             <h3>Städson AB</h3>
             <h4>Örebro, Sverige</h4>
@@ -110,12 +106,8 @@
         </div>
 
         <div class="timeline-item">
-          <div class="timeline-date">
-            <h3>2011-2021</h3>
-          </div>
-          <div class="timeline-line">
-            <div class="timeline-point"></div>
-          </div>
+          <h3>2011-2021</h3>
+          <div class="timeline-line"></div>
           <div class="timeline-content">
             <h3>Byggvaruhus "Dizayn"</h3>
             <h4>Mohyliv-Podilskyi, Ukraina</h4>
@@ -134,17 +126,13 @@
       </section>
 
       <section class="timeline">
-        <div class="title-box">
+        <header>
           <i class="fa-solid fa-graduation-cap"></i>
           <h2>Utbildning</h2>
-        </div>
+        </header>
         <div class="timeline-item">
-          <div class="timeline-date">
-            <h3>2026-Nuvarande</h3>
-          </div>
-          <div class="timeline-line">
-            <div class="timeline-point"></div>
-          </div>
+          <h3>2026-Nuvarande</h3>
+          <div class="timeline-line"></div>
           <div class="timeline-content">
             <h3>Jönköping University - Webbutvecklare .NET</h3>
             <h4>Värnamo, Sverige</h4>
@@ -161,12 +149,8 @@
         </div>
 
         <div class="timeline-item">
-          <div class="timeline-date">
-            <h3>2011-2013</h3>
-          </div>
-          <div class="timeline-line">
-            <div class="timeline-point"></div>
-          </div>
+          <h3>2011-2013</h3>
+          <div class="timeline-line"></div>
           <div class="timeline-content">
             <h3>
               Mohyliv-Podilskyi Teknologiska och Ekonomiska Högskola - Junior
@@ -184,12 +168,13 @@
       </section>
     </main>
 
+    <!-- Andra del av vänster sidokolumn som innehåller färdigheter, portfolio, språk och hobbyer. -->
     <aside>
       <section class="soft-skills">
-        <div class="title-box">
+        <header>
           <i class="fa-solid fa-circle-user"></i>
           <h2>Egenskaper</h2>
-        </div>
+        </header>
         <ul>
           <li>Lösningsorienterad</li>
           <li>Kritiskt tänkande</li>
@@ -199,10 +184,10 @@
       </section>
 
       <section class="hard-skills">
-        <div class="title-box">
+        <header>
           <i class="fa-solid fa-file-code"></i>
           <h2>Färdigheter</h2>
-        </div>
+        </header>
         <ul>
           <li>Programmeringsspråk - JavaScript, C#</li>
           <li>Frameworks och bibliotek - React</li>
@@ -212,10 +197,10 @@
       </section>
 
       <section class="portfolio">
-        <div class="title-box">
+        <header>
           <i class="fa-solid fa-folder-closed"></i>
           <h2>Portfolio</h2>
-        </div>
+        </header>
         <ul>
           <li>
             <a href="https://stanzhy.github.io/Layout-och-Mobile-First/">Layout och Mobile First</a>
@@ -227,10 +212,10 @@
       </section>
 
       <section class="language">
-        <div class="title-box">
+        <header>
           <i class="fa-solid fa-language"></i>
           <h2>Språk</h2>
-        </div>
+        </header>
         <ul>
           <li>
             <span>Svenska</span> <progress max="100" value="80"></progress>
@@ -245,10 +230,10 @@
       </section>
 
       <section class="hobbies">
-        <div class="title-box">
+        <header>
           <i class="fa-solid fa-panorama"></i>
           <h2>Hobbyer</h2>
-        </div>
+        </header>
         <ul>
           <li><i class="fa-solid fa-person-biking"></i></li>
           <li><i class="fa-solid fa-person-hiking"></i></li>
